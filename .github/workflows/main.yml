@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch: 
+  workflow_dispatch:  # This allows manual triggering of the workflow
 
 jobs:
   build:
@@ -23,6 +23,15 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install allure-pytest
+
+      - name: Install Allure Command Line
+        run: |
+          # Download and install Allure CLI
+          curl -o allure.tar.gz -Ls https://github.com/allure-framework/allure2/releases/latest/download/allure-$([ "$(uname)" = "Linux" ] && echo "linux" || echo "windows").zip
+          unzip allure.tar.gz -d /tmp/
+          sudo mv /tmp/allure /usr/bin/
+          sudo chmod +x /usr/bin/allure
+          allure --version  # Verify Allure installation
 
       - name: Generate Allure Report
         run: |
