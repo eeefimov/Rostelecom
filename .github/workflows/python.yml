@@ -1,4 +1,4 @@
-name: Run Pytest and Generate Allure Report
+name: Run Tests
 
 on:
   push:
@@ -25,5 +25,4 @@ jobs:
 
       - name: Run Tests and Generate Allure Report
         run: |
-          pytest -v -s Tests/ --alluredir=./allure-results
-          allure generate allure-results --clean -o allure-report
+          pytest -v -s Tests/
