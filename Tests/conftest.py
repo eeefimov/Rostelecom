@@ -54,17 +54,3 @@ def recovery(browser):
 def register(browser):
     register_form = RegisterForm(browser)
     return register_form
-#
-#
-# @pytest.fixture(scope="function")
-# def _register(browser):
-#     registration_scenario = Registration(browser)
-#     return registration_scenario
-# #
-# #
-# # @pytest.fixture(scope="function")
-# # def _login(browser):
-# #     login_scenarios = Authorization(browser)
-# #     auth_form = AuthForm(driver=browser)
-# #     login_scenarios.auth_form = auth_form
-# #     return login_scenarios
