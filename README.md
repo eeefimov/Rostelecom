@@ -16,6 +16,13 @@ The following checks have been implemented in this project:
 - ✅ UI Verify essential elements' names.
 - ✅ UI Verify elements' functionality (e.g., error messages, redirection to different forms).
 
+[![Python application](https://github.com/eeefimov/Rostelecom/actions/workflows/run_tests.yml/badge.svg)](https://github.com/eeefimov/Rostelecom/actions/workflows/run_tests.yml)
+
+Also was completed authorization and new user registration but they do not include to the repository. 
+Reason: 
+- vpn access sometimes required
+- Captch showed up, after several atemps to login (valid or invalid)
+
 ## Requirements
 - Detailed test requirements can be found [here](https://drive.google.com/file/d/1yMRCT2JT6EWqIWMwW0LSa6mn70_7XYVi/view?usp=sharing).
 
