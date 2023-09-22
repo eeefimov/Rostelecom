@@ -9,6 +9,7 @@ As part of the diploma project's completion, we need to thoroughly test the new 
 - [Rostelecom B2C Passport](https://b2c.passport.rt.ru)
 
 ## Implemented Checks
+[![Python application](https://github.com/eeefimov/Rostelecom/actions/workflows/run_tests.yml/badge.svg?branch=master)](https://github.com/eeefimov/Rostelecom/actions/workflows/run_tests.yml)
 
 The following checks have been implemented in this project:
 
