@@ -17,6 +17,8 @@ The following checks have been implemented in this project:
 - ✅ UI Verify essential elements' names.
 - ✅ UI Verify elements' functionality (e.g., error messages, redirection to different forms).
 
+## [Check Allure report](https://eeefimov.github.io/Rostelecom/)
+
 Also was completed authorization and new user registration but they do not include to the repository. 
 Reason: 
 - vpn access sometimes required
