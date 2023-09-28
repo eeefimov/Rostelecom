@@ -1,8 +1,6 @@
 name: report
 
 on:
-  commit_comment:
-    branches: ["gh-pages"]
   push:
     branches: [ "gh-pages" ]
   pull_request:
