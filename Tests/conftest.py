@@ -1,6 +1,5 @@
 import allure
 import pytest
-from allure_commons._allure import attach
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -26,6 +25,7 @@ def browser():
 
     yield driver
 
+    allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=allure.attachment_type.PNG)
     browser_logs = driver.get_log("browser")
     allure.attach(str(browser_logs), name="Browser Logs", attachment_type=allure.attachment_type.TEXT)
 

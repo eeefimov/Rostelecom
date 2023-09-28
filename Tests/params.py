@@ -24,14 +24,14 @@ def randomize_cyrillic_string(number: int):
     return random_string
 
 
-def randomize_chinese_string(number:int):
+def randomize_chinese_string(number: int):
     """Generate a random Chinese string of the specified length."""
     chinese_chars = '的一是不了人我在有他这为之大来以个中上们'
     random_string = "".join(random.choice(chinese_chars) for _ in range(number))
     return random_string
 
 
-def randomize_special_string(number:int):
+def randomize_special_string(number: int):
     special_chars = '|\\/!@#$%^&*()-_=+`~?"№;:[]{}'
     random_string = "".join(random.choice(special_chars) for _ in range(number))
     return random_string
@@ -85,7 +85,6 @@ params_wrong_email_pass = [
     pytest.param("", "123!@#QWERTYasdfg", False, id="Empty Email valid Pass")
 ]
 
-
 # Test parameters for checking invalid personal account (LS) and password combinations.
 params_wrong_ls_pass = [
     pytest.param(278015603030, "123!@#QWERTYasdfg", False, id="Invalid LS valid Pass"),
@@ -93,7 +92,6 @@ params_wrong_ls_pass = [
     pytest.param(278015603034, "", False, id="Valid LS Empty Pass"),
     pytest.param("", "123!@#QWERTYasdfg", False, id="Empty LS valid Pass")
 ]
-
 
 # Test parameters for checking various name and last name inputs for registration.
 params_register_values_name_lastname = [

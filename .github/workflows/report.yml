@@ -1,6 +1,11 @@
-name: allure-junit5-maven
+name: report
 
-on: [ push ]
+on:
+  push:
+    branches: [ "gh-pages" ]
+  pull_request:
+    branches: [ "master" ]
+
 
 jobs:
   build:
@@ -14,6 +19,18 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install -r requirements.txt 
+
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
@@ -22,12 +39,12 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Allure Report action from marketplace
+      - name: Allure Report action
         uses: simple-elf/allure-report-action@master
         if: always()
         id: allure-report
         with:
-          allure_results: target/allure-results
+          allure_result: target/allure-results
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history
